@@ -1,22 +1,65 @@
-# macOS
-.DS_Store
-
-# Python virtual environments
-venv/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
 env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
 pyqt-env/
 
-# Compiled files
-__pycache__/
-*.pyc
+# Jupyter Notebook
+.ipynb_checkpoints
 
-# Model and data files
-*.pt
-test_videos/
+# Analysis Results (generated data)
 analysis_results/
 
-# System files
-*.swp
+# Model files (often large)
+*.pt
+*.pth
+*.weights
+models/*.pt
+models/*.pth
+models/*.weights
 
-# Docs
-*.pptx
+# Video files (often large)
+*.mp4
+*.avi
+*.mkv
+*.mov
+demos/*.mp4
+test_videos/*.mp4
+
+# Temporary files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Cached data
+*.pickle
+*.pkl
+*.npy
+*.npz

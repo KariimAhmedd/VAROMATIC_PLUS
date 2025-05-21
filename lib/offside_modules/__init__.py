@@ -1,23 +1,23 @@
 """
-VAROMATIC+ Offside Detection Modules
+Offside detection modules for VAROMATIC+.
 
-This package contains modules for soccer offside detection including:
+This package contains modules for detecting and analyzing offside situations
+in soccer matches, including:
 - Player detection and tracking
-- Field line detection
-- Color analysis
-- Offside detection logic
+- Team color analysis
+- Offside line detection
+- Goal detection
 """
 
-from .offside_detection import OffsideDetector
 from .player_detection import PlayerDetector
 from .color_analysis import ColorAnalyzer
-from .field_detection import FieldLineDetector
-from .player_tracking import PlayerTracker
+from .offside_detection import OffsideDetector, Player
+from .goal_detection import GoalDetector
 
 __all__ = [
-    'OffsideDetector',
     'PlayerDetector',
     'ColorAnalyzer',
-    'FieldLineDetector',
-    'PlayerTracker'
+    'OffsideDetector',
+    'Player',
+    'GoalDetector'
 ] 

@@ -1,3 +1,23 @@
+# VAROMATIC+ Documentation
+
+This directory contains the documentation for the VAROMATIC+ soccer analysis system.
+
+## Contents
+
+- Technical documentation
+- User guides
+- API references
+- Implementation details
+
+## Getting Started
+
+For developers looking to understand or contribute to the VAROMATIC+ project, start with the following documentation:
+
+1. Architecture overview
+2. Component descriptions
+3. Data flow diagrams
+4. Implementation details
+
 # VAROMATIC+ Presentation
 
 This directory contains the presentation files for the VAROMATIC+ football analysis application.
