@@ -1,0 +1,23 @@
+# GUI
+PyQt6>=6.5.0
+PyQt6-sip==13.6.0
+
+# Core dependencies
+numpy>=1.24.0
+opencv-python>=4.8.0
+scikit-learn>=1.3.0
+scipy>=1.10.0
+
+# Deep Learning
+ultralytics>=8.0.0
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Color analysis
+colormath>=3.0.0
+colour-science>=0.4.4
+
+# Utilities
+python-dotenv==1.0.0
+tqdm==4.66.1
+yt-dlp>=2023.3.4 

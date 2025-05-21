@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Python virtual environments
+venv/
+env/
+pyqt-env/
+
+# Compiled files
+__pycache__/
+*.pyc
+
+# Model and data files
+*.pt
+test_videos/
+analysis_results/
+
+# System files
+*.swp
+
+# Docs
+*.pptx

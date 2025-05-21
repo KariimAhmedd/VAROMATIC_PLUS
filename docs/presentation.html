@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAROMATIC+ | Next-Generation Football Analysis</title>
+    
+    <!-- External Dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0a192f;
+            color: #e6f1ff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #64ffda, #00bcd4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #64ffda;
+        }
+
+        h3 {
+            color: #64ffda;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            color: #8892b0;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.2s forwards;
+        }
+
+        .description {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #8892b0;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.4s forwards;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: #64ffda;
+            margin-bottom: 20px;
+        }
+
+        .feature-card p {
+            color: #8892b0;
+            line-height: 1.6;
+        }
+
+        .implementation-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .implementation-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .code-block {
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .code-block pre {
+            margin: 0;
+            padding: 20px;
+            background: #1a1a1a !important;
+        }
+
+        .code-block code {
+            font-family: 'Fira Code', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(100, 255, 218, 0.3);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(100, 255, 218, 0.5);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .description {
+                font-size: 1.1rem;
+            }
+            
+            .implementation-container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="home" class="section">
+        <div class="container">
+            <h1>VAROMATIC+</h1>
+            <div class="subtitle">Next-Generation Football Analysis System</div>
+            <p class="description">
+                Welcome to the future of football analysis. VAROMATIC+ combines cutting-edge AI technology with real-time processing 
+                to deliver professional-grade analysis for modern football. Our system revolutionizes how teams, analysts, and 
+                broadcasters understand and interact with the beautiful game.
+            </p>
+        </div>
+    </div>
+
+    <div id="features" class="section">
+        <div class="container">
+            <h2>Core Features</h2>
+            <p class="description">
+                Discover the powerful capabilities that make VAROMATIC+ the leading choice for football analysis.
+            </p>
+            <div class="feature-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <i class="fas fa-user-group"></i>
+                    <h3>Player Detection</h3>
+                    <p>Advanced real-time tracking powered by YOLOv8 Neural Network, capable of identifying and tracking multiple players 
+                    simultaneously with exceptional accuracy.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-flag"></i>
+                    <h3>Offside Analysis</h3>
+                    <p>Precise automated line detection and position tracking system that provides instant offside determinations with 
+                    frame-perfect accuracy.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-palette"></i>
+                    <h3>Team Recognition</h3>
+                    <p>Sophisticated color analysis algorithms that instantly identify and distinguish teams, tracking player positions 
+                    and movements throughout the match.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-desktop"></i>
+                    <h3>Professional UI</h3>
+                    <p>Intuitive, modern interface designed for professional use, featuring real-time analytics, customizable displays, 
+                    and comprehensive match data visualization tools.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="implementation" class="section">
+        <div class="container">
+            <h2>Technical Implementation</h2>
+            <p class="description">
+                Core components and technologies powering VAROMATIC+'s advanced analysis capabilities.
+            </p>
+            <div class="implementation-container">
+                <!-- Project Structure -->
+                <div class="implementation-item" data-aos="fade-up">
+                    <h3>Project Structure and Dependencies</h3>
+                    <div class="code-block">
+                        <pre><code class="language-python">
+# requirements.txt
+torch>=2.0.0
+torchvision>=0.15.0
+ultralytics>=8.0.0  # YOLOv8
+opencv-python>=4.7.0
+numpy>=1.24.0
+PyQt6>=6.4.0
+scikit-learn>=1.2.0
+pandas>=1.5.0
+matplotlib>=3.7.0
+                        </code></pre>
+                    </div>
+                    <div class="code-block">
+                        <pre><code class="language-python">
+# config.py
+class Config:
+    # Model paths
+    YOLO_MODEL_PATH = 'models/yolov8n.pt'
+    TEAM_CLASSIFIER_PATH = 'models/team_classifier.pkl'
+    
+    # Detection settings
+    CONFIDENCE_THRESHOLD = 0.5
+    NMS_THRESHOLD = 0.45
+    
+    # Analysis settings
+    FIELD_LINE_THRESHOLD = 50
+    MIN_LINE_LENGTH = 100
+    MAX_LINE_GAP = 10
+    
+    # Team recognition
+    COLOR_TOLERANCE = 30
+    MIN_JERSEY_AREA = 100
+    
+    # Performance
+    PROCESS_WIDTH = 1280
+    PROCESS_HEIGHT = 720
+    TARGET_FPS = 30
+                        </code></pre>
+                    </div>
+                </div>
+
+                <!-- Core Detection -->
+                <div class="implementation-item" data-aos="fade-up">
+                    <h3>Core Player Detection</h3>
+                    <div class="code-block">
+                        <pre><code class="language-python">
+# Core player detection using YOLOv8
+class PlayerDetector:
+    def __init__(self):
+        self.model = YOLO('models/yolov8n.pt')
+        self.confidence_threshold = 0.5
+
+    def detect_players(self, frame):
+        # Run YOLOv8 inference
+        results = self.model(frame)
+        
+        players = []
+        for detection in results[0].boxes.data:
+            if detection[5] == 0:  # Class 0 is person
+                confidence = detection[4]
+                if confidence > self.confidence_threshold:
+                    x1, y1, x2, y2 = detection[0:4]
+                    players.append({
+                        'bbox': (int(x1), int(y1), int(x2), int(y2)),
+                        'confidence': float(confidence)
+                    })
+        return players
+                        </code></pre>
+                    </div>
+                </div>
+
+                <!-- Team Recognition -->
+                <div class="implementation-item" data-aos="fade-up">
+                    <h3>Team Recognition</h3>
+                    <div class="code-block">
+                        <pre><code class="language-python">
+# Team recognition using color analysis
+class TeamRecognition:
+    def __init__(self):
+        self.team_colors = {
+            'team1': {'lower': None, 'upper': None},
+            'team2': {'lower': None, 'upper': None}
+        }
+
+    def calibrate_team_colors(self, frame, team1_roi, team2_roi):
+        """Calibrate team colors from regions of interest"""
+        # Convert ROIs to HSV color space
+        team1_hsv = cv2.cvtColor(frame[team1_roi], cv2.COLOR_BGR2HSV)
+        team2_hsv = cv2.cvtColor(frame[team2_roi], cv2.COLOR_BGR2HSV)
+        
+        # Calculate color ranges with tolerance
+        self.team_colors['team1'] = self._calculate_color_range(team1_hsv)
+        self.team_colors['team2'] = self._calculate_color_range(team2_hsv)
+
+    def classify_player(self, player_roi):
+        """Classify player's team based on jersey color"""
+        hsv = cv2.cvtColor(player_roi, cv2.COLOR_BGR2HSV)
+        
+        # Check color matches for each team
+        team1_match = cv2.inRange(hsv, 
+                                self.team_colors['team1']['lower'],
+                                self.team_colors['team1']['upper'])
+        team2_match = cv2.inRange(hsv, 
+                                self.team_colors['team2']['lower'],
+                                self.team_colors['team2']['upper'])
+        
+        # Return team with highest color match
+        team1_score = np.sum(team1_match)
+        team2_score = np.sum(team2_match)
+        
+        return 'team1' if team1_score > team2_score else 'team2'
+                        </code></pre>
+                    </div>
+                </div>
+
+                <!-- Offside Analysis -->
+                <div class="implementation-item" data-aos="fade-up">
+                    <h3>Offside Detection</h3>
+                    <div class="code-block">
+                        <pre><code class="language-python">
+# Offside analysis system
+class OffsideAnalyzer:
+    def __init__(self):
+        self.field_detector = FieldLineDetector()
+        self.perspective_transform = None
+
+    def detect_field_lines(self, frame):
+        """Detect field lines using Hough transform"""
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        edges = cv2.Canny(gray, 50, 150)
+        lines = cv2.HoughLinesP(edges, 1, np.pi/180, 100,
+                               minLineLength=100, maxLineGap=10)
+        return lines
+
+    def check_offside(self, players, ball_position):
+        """Check for offside positions"""
+        if self.perspective_transform is None:
+            return None
+            
+        # Transform player positions to bird's eye view
+        transformed_positions = cv2.perspectiveTransform(
+            players, self.perspective_transform)
+        
+        # Get last defender position
+        defenders = [p for p in transformed_positions if p['team'] == 'defending']
+        last_defender_y = max(d['position'][1] for d in defenders)
+        
+        # Check attacking players
+        offside_players = []
+        for player in transformed_positions:
+            if (player['team'] == 'attacking' and 
+                player['position'][1] < last_defender_y and
+                player['position'][1] < ball_position[1]):
+                offside_players.append(player)
+                
+        return offside_players
+                        </code></pre>
+                    </div>
+                </div>
+
+                <!-- GUI Core -->
+                <div class="implementation-item" data-aos="fade-up">
+                    <h3>Main GUI</h3>
+                    <div class="code-block">
+                        <pre><code class="language-python">
+# Main GUI implementation
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("VAROMATIC+ Analysis")
+        self.setup_ui()
+
+    def setup_ui(self):
+        # Create central widget and layout
+        central_widget = QWidget()
+        self.setCentralWidget(central_widget)
+        layout = QVBoxLayout(central_widget)
+
+        # Add video display widget
+        self.video_widget = VideoWidget()
+        layout.addWidget(self.video_widget)
+
+        # Add control panel
+        self.control_panel = ControlPanel()
+        layout.addWidget(self.control_panel)
+
+        # Add analysis panel
+        self.analysis_panel = AnalysisPanel()
+        layout.addWidget(self.analysis_panel)
+
+        # Connect signals
+        self.control_panel.analysis_toggled.connect(self.toggle_analysis)
+        self.video_widget.frame_processed.connect(self.update_analysis)
+
+    def process_frame(self):
+        """Main processing loop"""
+        ret, frame = self.video_capture.read()
+        if not ret:
+            return
+            
+        # Detect players
+        players = self.player_detector.detect_players(frame)
+        
+        # Classify teams
+        for player in players:
+            player['team'] = self.team_recognition.classify_player(
+                player['roi'])
+        
+        # Check offside
+        offside_players = self.offside_analyzer.check_offside(
+            players, self.ball_position)
+        
+        # Update display
+        self.draw_results(frame, players, offside_players)
+        self.video_widget.update_frame(frame)
+                        </code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html> 
