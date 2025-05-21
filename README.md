@@ -7,7 +7,7 @@
 
 VAROMATIC+ is an advanced soccer analysis platform that combines computer vision, AI, and data visualization to provide automated offside detection, player tracking, and tactical insights.
 
-![VAROMATIC+ Main Interface](screenshots/main_interface.png)
+![VAROMATIC+ Main Interface](screenshots/Interface.png)
 
 ## 📋 Features
 
@@ -34,12 +34,12 @@ VAROMATIC+ is an advanced soccer analysis platform that combines computer vision
 
 <table>
   <tr>
-    <td><img src="screenshots/video_analysis.png" alt="Video Analysis Tab" width="400"/></td>
-    <td><img src="screenshots/analytics_tab.png" alt="Analytics Tab" width="400"/></td>
+    <td><img src="screenshots/Interface.png" alt="Main Interface" width="400"/></td>
+    <td><img src="screenshots/Analytics_Page.png" alt="Analytics Interface" width="400"/></td>
   </tr>
   <tr>
-    <td><img src="screenshots/offside_detection.png" alt="Offside Detection" width="400"/></td>
-    <td><img src="screenshots/heatmap.png" alt="Offside Heatmap" width="400"/></td>
+    <td><img src="screenshots/Live_camera_mode.png" alt="Live Camera Mode" width="400"/></td>
+    <td><img src="screenshots/Interface.png" alt="User Interface" width="400"/></td>
   </tr>
 </table>
 
@@ -51,8 +51,8 @@ VAROMATIC+ is an advanced soccer analysis platform that combines computer vision
 
 ### Step 1: Clone the repository
 ```bash
-git clone https://github.com/yourusername/VAROMATIC-Plus.git
-cd VAROMATIC-Plus
+git clone https://github.com/KariimAhmedd/VAROMATIC_PLUS.git
+cd VAROMATIC_PLUS
 ```
 
 ### Step 2: Set up a virtual environment (recommended)
@@ -135,4 +135,8 @@ VAROMATIC+/
 │ └── utils/ # Utility functions
 ├── models/ # Pre-trained detection models
 ├── resources/ # UI resources and assets
-└── docs/ # Documentat
+├── docs/ # Documentation
+├── scripts/ # Shell scripts for setup and running
+├── screenshots/ # Application screenshots
+├── test_videos/ # Test video files
+└── utils/ # Utility scripts
